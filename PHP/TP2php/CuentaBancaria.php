@@ -54,11 +54,26 @@ actualizarSaldo(): actualizará el saldo de la cuenta aplicándole el interés d
 /*
 •
 depositar($cant): permitirá ingresar una cantidad de dinero en la cuenta.
-•
+•*/
+    public function depositar($cant){
+        $this->setSaldoActual($cant);
+    }
+/*
 retirar($cant): permitirá sacar una cantidad de dinero de la cuenta (si hay saldo).
-•
-Redefinir el método _ _toString() para que retorne la información de los atributos de la clase.
-b.
+•*/
+    public function retirar($cant){
+        $saldoActual = $this->getSaldoActual();
+        $this->setSaldoActual($saldoActual-$cant);
+    }
+/*
+Redefinir el método _ _toString() para que retorne la información de los atributos de la clase.*/
+    public function __toString(){
+        $cadena = "Numero de Cuenta: " . $this->getNumeroCuenta() . "\n" .
+                  "DNI Cliente: " . $this->getDNICliente() . " \n"  .
+                    "Saldo Actual: " . $this->getSaldoActual() ;
+         return $cadena;           
+    }
+/*b.
 Crear un script Test_CuentaBancaria que cree un objeto CuentaBancaria e invoque a cada uno de los métodos implementados.
 
 
