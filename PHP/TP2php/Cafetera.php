@@ -40,14 +40,15 @@ public function llenarCafetera(){
 // servirTaza($cantidad): simula la acción de servir una taza con la capacidad indicada.
 // Si la cantidad actual de café no alcanza para llenar la taza, se sirve lo que quede y se devuelve algún valor que indique que no se pudo completar correctamente la acción.
 public function servirTaza($cantidad){
+    $exito=false;
     if($cantidad  <=  $this->getCapacidadActual()   ){
         $this->setCapacidadActual(($this->getCapacidadActual()   -  $cantidad));
-        $msj = "TAza servida correctamente";
+        $exito=true;
     }else{
         $this->setCapacidadActual(0);
-        $msj = "Se sirvio todo el cafe que quedaba. No alcanzo para la cantidad deseada";
-    }
-    return $msj;
+        $exito = false;
+        }
+    return $exito;
 }
 
 

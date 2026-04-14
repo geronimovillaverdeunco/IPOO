@@ -56,11 +56,12 @@ actualizarSaldo(): actualizará el saldo de la cuenta aplicándole el interés d
 depositar($cant): permitirá ingresar una cantidad de dinero en la cuenta.
 •*/
     public function depositar($cant){
-        $this->setSaldoActual($cant);
+        $this->setSaldoActual($this->getSaldoActual()+$cant);
     }
 /*
 retirar($cant): permitirá sacar una cantidad de dinero de la cuenta (si hay saldo).
-•*/
+VALIDAR QUE NO RETIRE DE MAS
+•*/ 
     public function retirar($cant){
         $saldoActual = $this->getSaldoActual();
         $this->setSaldoActual($saldoActual-$cant);
