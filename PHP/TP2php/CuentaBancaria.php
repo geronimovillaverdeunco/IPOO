@@ -5,17 +5,21 @@ Crear una clase CuentaBancaria con los siguientes atributos: número de cuenta, 
 */
 class CuentaBancaria{
     private $numeroCuenta;
-    private $dniCliente;
+    //private $dniCliente; LO HAGO UNA REFERENCIA A UNA CLASE PERSONA
+    private $cliente;
     private $saldoActual;
     private $interesAnual;
+    /*
+c.
+Realizar las modificaciones necesarias en la clase CuentaBancaria (Ejercicio 2) para que en vez de contener como atributo el DNI del dueño de la cuenta tenga una referencia a las clase Persona. */
 
 /*a.
 Definir en la clase los siguientes métodos:
 •
 Método constructor __construct() que recibe como parámetros los valores iniciales para los atributos de la clase.*/
-    public function __construct($numCuen , $dniCli, $saldoAct, $intAnual){
+    public function __construct($numCuen , $cli, $saldoAct, $intAnual){
         $this->numeroCuenta = $numCuen;
-        $this->dniCliente = $dniCli;
+        $this->cliente = $cli;
         $this->saldoActual = $saldoAct;
         $this->interesAnual = $intAnual;
     }
@@ -26,8 +30,8 @@ Los métodos de acceso de cada uno de los atributos de la clase.*/
     public function getNumeroCuenta(){
         return $this->numeroCuenta;
     }
-    public function getDNICliente(){
-        return $this->dniCliente;
+    public function getDatosCliente(){
+        return $this->cliente;
     }
     public function getSaldoActual(){
         return $this->saldoActual;
@@ -38,9 +42,9 @@ Los métodos de acceso de cada uno de los atributos de la clase.*/
     public function setNumeroCuenta($numCta){
         $this->numeroCuenta =$numCta;
     }
-    public function setDniCliente($elDni){
-        $this->dniCliente = $elDni;
-    }
+    // public function setDniCliente($elDni){
+    //     $this->dniCliente = $elDni;
+    // }
     public function setSaldoActual($elSaldo){
         $this->saldoActual = $elSaldo;
     }
@@ -70,13 +74,9 @@ VALIDAR QUE NO RETIRE DE MAS
 Redefinir el método _ _toString() para que retorne la información de los atributos de la clase.*/
     public function __toString(){
         $cadena = "Numero de Cuenta: " . $this->getNumeroCuenta() . "\n" .
-                  "DNI Cliente: " . $this->getDNICliente() . " \n"  .
+                  "DNI Cliente: " . $this->cliente->getNumeroDocumento() . " \n"  .
                     "Saldo Actual: " . $this->getSaldoActual() ;
          return $cadena;           
     }
-/*b.
-Crear un script Test_CuentaBancaria que cree un objeto CuentaBancaria e invoque a cada uno de los métodos implementados.
-
-
-*/
 }
+

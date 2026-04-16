@@ -18,7 +18,4 @@ function mostrarDatos($arr){
     }
 }
 
-mostrarDatos($libros);
-function mismaEditorial($arr, $editorial){
-    $resultado = [];
-}
+

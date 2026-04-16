@@ -57,7 +57,7 @@ perteneceEditorial($editorial): indica si el libro pertenece a una editorial dad
 •
 aniosdesdeEdicion(): método que retorna los años que han pasado desde que el libro fue editado.*/
     public function aniosDesdeEdicion(){
-        return 2026-$this->getAnioEdicion();
+        return date("Y")-$this->getAnioEdicion();
     }
 
 }

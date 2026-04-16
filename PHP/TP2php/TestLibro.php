@@ -18,6 +18,8 @@ $libro8 = new Libro(5113, "Argentina", 2022, "Camperones", "JAvier", "Lopez");
 
 $libros = [$libro1, $libro2, $libro3, $libro4, $libro5, $libro6];
 
+echo $libro1->aniosDesdeEdicion() . "\n";
+
 /*
 •
 Defina el método iguales($libro,$arreglo): dada una colección de libros, indica si el libro pasado por parámetro ya se encuentra en dicha colección.*/ 
