@@ -47,7 +47,10 @@ Los métodos de acceso para cada una de las variables instancias de la clase.*/
         return $this->cantidadActualPasajeros;
     }
     public function setCantidadActualPasajeros($cantPasajeros){
-        $this->cantidadActualPasajeros = $cantPasajeros;
+        $this->cantidadActualPasajeros+= $cantPasajeros;
+    }
+    public function setPeso($cantPasajeros){
+        $this->peso+= $cantPasajeros*80;
     }
 
 /*
@@ -71,6 +74,7 @@ Implementar el método incorporarPasajeroVagon que recibe por parámetro la cant
         if($cantPasajeros < ($this->getCantidadMaximaPasajeros()-$this->getCantidadActualPasajeros()) 
             && $cantPasajeros>0){
             $this->setCantidadActualPasajeros($cantPasajeros);
+            $this->setPeso($cantPasajeros);
             $exito = true;
         }else{
             $exito = false;
